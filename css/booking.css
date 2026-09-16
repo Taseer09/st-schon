@@ -4,8 +4,12 @@
 
 .contact-hero {
   padding-top: calc(var(--header-height) + 2rem);
-  padding-bottom: 7rem;
+  padding-bottom: 5rem;
   background: var(--bg-main);
+  flex: 1 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .contact-layout {
