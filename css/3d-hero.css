@@ -1,0 +1,353 @@
+/* ==========================================================================
+   ST-SCHON USA LLC - 3D INTERACTIVE HERO STYLES
+   ========================================================================== */
+
+.hero-3d-section {
+  position: relative;
+  min-height: 100vh;
+  padding-top: var(--header-height);
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: radial-gradient(circle at 70% 30%, rgba(30, 41, 59, 0.4) 0%, rgba(9, 13, 20, 1) 70%);
+}
+
+.hero-bg-glow {
+  position: absolute;
+  top: 20%;
+  right: 15%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(245, 158, 11, 0.12) 0%, rgba(0, 0, 0, 0) 70%);
+  filter: blur(60px);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  min-height: calc(100vh - var(--header-height));
+  gap: 2rem;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-content {
+  padding-right: 2rem;
+}
+
+.hero-badge-wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.4rem 1rem;
+  background: rgba(245, 158, 11, 0.1);
+  border: 1px solid var(--border-glow);
+  border-radius: var(--radius-full);
+  margin-bottom: 1.5rem;
+}
+
+.hero-badge-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent-gold-light);
+  box-shadow: 0 0 10px var(--accent-gold);
+  animation: pulseGlow 2s infinite;
+}
+
+@keyframes pulseGlow {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(1.3); }
+}
+
+.hero-badge-text {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--accent-gold-light);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 1.25rem;
+  letter-spacing: -1px;
+}
+
+.hero-description {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+  max-width: 520px;
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+}
+
+/* Hero Stats Pills */
+.hero-stats {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-number {
+  font-family: var(--font-heading);
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: var(--text-main);
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 0.8rem;
+  color: var(--text-dim);
+  margin-top: 0.3rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* 3D Scene Viewport Container */
+.hero-3d-viewport {
+  position: relative;
+  width: 100%;
+  height: 580px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#three-canvas {
+  width: 100%;
+  height: 100%;
+  outline: none;
+  cursor: grab;
+}
+
+#three-canvas:active {
+  cursor: grabbing;
+}
+
+/* 3D Product Interactive Switcher Overlay */
+.product-selector-bar {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  background: rgba(15, 23, 42, 0.8);
+  backdrop-filter: blur(16px);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-full);
+  z-index: 10;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.selector-btn {
+  padding: 0.5rem 1rem;
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  font-weight: 600;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: var(--transition-fast);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.selector-btn:hover, .selector-btn.active {
+  background: var(--accent-gold);
+  color: #000;
+}
+
+/* Color Swatches Overlay */
+.color-swatch-box {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  background: rgba(15, 23, 42, 0.8);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 0.75rem;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.swatch-title {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text-dim);
+  font-weight: 700;
+}
+
+.swatches-row {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.swatch-dot {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: var(--transition-fast);
+}
+
+.swatch-dot:hover, .swatch-dot.active {
+  transform: scale(1.2);
+  border-color: #fff;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+/* 3D Viewport Hint */
+.interactive-hint {
+  position: absolute;
+  top: 1.5rem;
+  left: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  color: var(--text-dim);
+  background: rgba(15, 23, 42, 0.7);
+  padding: 0.4rem 0.8rem;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--border-color);
+  backdrop-filter: blur(8px);
+  pointer-events: none;
+}
+
+.interactive-hint i {
+  color: var(--accent-gold);
+  animation: pulseHand 1.5s ease-in-out infinite;
+}
+
+@keyframes pulseHand {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+}
+
+/* Floating Product Spec Card in 3D Scene */
+.spec-floating-card {
+  position: absolute;
+  bottom: 5.5rem;
+  right: 1.5rem;
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(16px);
+  border: 1px solid var(--border-glow);
+  border-radius: var(--radius-md);
+  padding: 1rem;
+  width: 200px;
+  z-index: 10;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+  animation: floatAnim 4s ease-in-out infinite;
+}
+
+@keyframes floatAnim {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+.spec-title {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 0.3rem;
+}
+
+.spec-detail {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.spec-tag {
+  display: inline-block;
+  margin-top: 0.5rem;
+  font-size: 0.7rem;
+  color: var(--accent-gold);
+  font-weight: 700;
+}
+
+/* Responsive Adjustments for 3D Hero */
+@media (max-width: 992px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+    padding: 3rem 0;
+  }
+
+  .hero-content {
+    padding-right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-title {
+    font-size: 2.75rem;
+  }
+
+  .hero-description {
+    max-width: 100%;
+  }
+
+  .hero-actions {
+    justify-content: center;
+  }
+
+  .hero-stats {
+    justify-content: center;
+  }
+
+  .hero-3d-viewport {
+    height: 440px;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-title {
+    font-size: 2.2rem;
+  }
+
+  .hero-3d-viewport {
+    height: 360px;
+  }
+
+  .product-selector-bar {
+    width: 90%;
+    overflow-x: auto;
+    justify-content: flex-start;
+  }
+
+  .spec-floating-card {
+    display: none;
+  }
+}

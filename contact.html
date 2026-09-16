@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact & Book Appointment | ST-SCHON USA LLC</title>
+  <meta name="description" content="Contact ST-SCHON LLC at contact@st-schon.com or schedule an appointment with our US team." />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/booking.css" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header scrolled">
+    <div class="container nav-wrap">
+      <a href="index.html" class="brand-logo">
+        <span class="logo-mark">ST-SCHON</span>
+        <span class="logo-badge-pill">REGISTERED USA LLC</span>
+      </a>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="contact.html" class="nav-link active">Contact Us</a></li>
+      </ul>
+
+      <div>
+        <a href="#booking" class="btn btn-primary">
+          Book Appointment
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN CONTACT & BOOKING SECTION -->
+  <section class="contact-hero">
+    <div class="container">
+      
+      <div style="text-align: center; max-width: 620px; margin: 0 auto 3.5rem auto;">
+        <span class="hero-subhead">DIRECT INQUIRIES & SCHEDULING</span>
+        <h1 style="font-size: 3rem; margin-bottom: 0.8rem;">Get in touch with <span class="serif-text text-terracotta">ST-SCHON</span></h1>
+        <p style="color: var(--text-secondary); font-size: 1.05rem;">Email us directly or select an available date below for a live virtual appointment.</p>
+      </div>
+
+      <div class="contact-layout">
+        
+        <!-- Left Column: Official Contact Details -->
+        <div class="info-box">
+          <h2>ST-SCHON USA LLC</h2>
+          <p>We are an officially registered USA business entity and Amazon Brand seller. We respond to all messages within 24 hours.</p>
+
+          <!-- Featured Email Card -->
+          <div class="email-highlight-box">
+            <div class="email-label">Official Support Email</div>
+            <div class="email-row-action">
+              <div class="email-text">contact@st-schon.com</div>
+              <button class="btn-copy" id="copy-email-btn">Copy Email</button>
+            </div>
+          </div>
+
+          <div class="hq-details">
+            <div class="hq-row">
+              <div class="hq-icon"><i class="fa-solid fa-building"></i></div>
+              <div class="hq-text">
+                <h4>US Business Address</h4>
+                <p>ST-SCHON LLC<br />1209 North Orange St, Suite 400<br />Wilmington, DE 19801, United States</p>
+              </div>
+            </div>
+
+            <div class="hq-row">
+              <div class="hq-icon"><i class="fa-solid fa-phone"></i></div>
+              <div class="hq-text">
+                <h4>Toll-Free US Line</h4>
+                <p>+1 (800) 555-SCHON (Mon–Fri, 9am–6pm EST)</p>
+              </div>
+            </div>
+
+            <div class="hq-row">
+              <div class="hq-icon"><i class="fa-brands fa-amazon"></i></div>
+              <div class="hq-text">
+                <h4>Amazon Brand Registry</h4>
+                <p>Verified USA LLC Entity #983421</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Interactive Appointment Booking Wizard -->
+        <div class="wizard-box" id="booking-wizard-card">
+          <div id="booking"></div>
+          
+          <!-- Step Indicator Bar -->
+          <div class="step-bar">
+            <div class="step-circle active">1</div>
+            <div class="step-divider"></div>
+            <div class="step-circle">2</div>
+            <div class="step-divider"></div>
+            <div class="step-circle">3</div>
+            <div class="step-divider"></div>
+            <div class="step-circle">4</div>
+          </div>
+
+          <!-- STEP 1: TOPIC SELECTION -->
+          <div class="wizard-step active" id="pane-1">
+            <h3 style="font-size: 1.35rem; margin-bottom: 0.4rem;">Select Consultation Topic</h3>
+            <p style="color: var(--text-secondary); font-size: 0.88rem; margin-bottom: 1.5rem;">Choose the purpose of your appointment with ST-SCHON US specialists.</p>
+
+            <div class="topics-list">
+              <div class="topic-item selected" data-topic="Wholesale & Bulk Inquiry">
+                <div>
+                  <div class="topic-name">Wholesale & Bulk Inquiry</div>
+                  <div class="topic-sub">45 mins • Distributor pricing & bulk volume terms</div>
+                </div>
+                <i class="fa-solid fa-chevron-right" style="color: var(--text-muted); font-size: 0.8rem;"></i>
+              </div>
+
+              <div class="topic-item" data-topic="Brand Partnership">
+                <div>
+                  <div class="topic-name">Brand Partnership</div>
+                  <div class="topic-sub">30 mins • Co-branding, retail & affiliate opportunities</div>
+                </div>
+                <i class="fa-solid fa-chevron-right" style="color: var(--text-muted); font-size: 0.8rem;"></i>
+              </div>
+
+              <div class="topic-item" data-topic="Daily Product Consultation">
+                <div>
+                  <div class="topic-name">Daily Product Consultation</div>
+                  <div class="topic-sub">20 mins • Specs, material warranty & Amazon order help</div>
+                </div>
+                <i class="fa-solid fa-chevron-right" style="color: var(--text-muted); font-size: 0.8rem;"></i>
+              </div>
+            </div>
+
+            <div style="text-align: right;">
+              <button type="button" class="btn btn-primary wizard-next">
+                Next Step: Select Date <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- STEP 2: CALENDAR DATE PICKER -->
+          <div class="wizard-step" id="pane-2">
+            <h3 style="font-size: 1.35rem; margin-bottom: 0.4rem;">Select Appointment Date</h3>
+            <p style="color: var(--text-secondary); font-size: 0.88rem; margin-bottom: 1.5rem;">Pick an available day on the calendar.</p>
+
+            <div class="calendar-card">
+              <div class="cal-top">
+                <button type="button" class="cal-arrow" id="cal-prev"><i class="fa-solid fa-chevron-left"></i></button>
+                <div class="cal-month-text" id="cal-month-title">September 2026</div>
+                <button type="button" class="cal-arrow" id="cal-next"><i class="fa-solid fa-chevron-right"></i></button>
+              </div>
+
+              <div class="cal-headers-row">
+                <span>SUN</span><span>MON</span><span>TUE</span><span>WED</span><span>THU</span><span>FRI</span><span>SAT</span>
+              </div>
+
+              <div class="cal-days-container" id="cal-days-grid"></div>
+            </div>
+
+            <div style="display: flex; justify-content: space-between;">
+              <button type="button" class="btn btn-outline wizard-prev">Back</button>
+              <button type="button" class="btn btn-primary wizard-next">
+                Next Step: Select Time <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- STEP 3: TIME SLOT SELECTION -->
+          <div class="wizard-step" id="pane-3">
+            <h3 style="font-size: 1.35rem; margin-bottom: 0.4rem;">Select Available Time Slot</h3>
+            <p style="color: var(--text-secondary); font-size: 0.88rem; margin-bottom: 1.5rem;">Times shown in Eastern Standard Time (EST).</p>
+
+            <div class="slots-list" id="time-slots-grid"></div>
+
+            <div style="display: flex; justify-content: space-between;">
+              <button type="button" class="btn btn-outline wizard-prev">Back</button>
+              <button type="button" class="btn btn-primary wizard-next">
+                Next Step: Your Details <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- STEP 4: CONTACT FORM -->
+          <div class="wizard-step" id="pane-4">
+            <h3 style="font-size: 1.35rem; margin-bottom: 0.4rem;">Your Information</h3>
+            <p style="color: var(--text-secondary); font-size: 0.88rem; margin-bottom: 1.5rem;">Enter your contact details to reserve the appointment.</p>
+
+            <form id="appointment-form">
+              <div class="field-wrap">
+                <label class="field-label" for="input-name">Full Name *</label>
+                <input type="text" id="input-name" class="field-input" placeholder="e.g. Sarah Jenkins" required />
+              </div>
+
+              <div class="field-wrap">
+                <label class="field-label" for="input-email">Email Address *</label>
+                <input type="email" id="input-email" class="field-input" placeholder="sarah@example.com" required />
+              </div>
+
+              <div class="field-wrap">
+                <label class="field-label" for="input-notes">Notes / Message (Optional)</label>
+                <textarea id="input-notes" class="field-textarea" placeholder="Provide any additional details about your inquiry..."></textarea>
+              </div>
+
+              <div style="display: flex; justify-content: space-between; margin-top: 1.5rem;">
+                <button type="button" class="btn btn-outline wizard-prev">Back</button>
+                <button type="submit" class="btn btn-primary">
+                  <i class="fa-solid fa-check-circle"></i> Confirm Appointment
+                </button>
+              </div>
+            </form>
+          </div>
+
+          <!-- STEP 5: CONFIRMATION TICKET -->
+          <div class="wizard-step" id="pane-5">
+            <div id="ticket-result-box"></div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-flex">
+        <div>
+          <a href="index.html" class="brand-logo" style="margin-bottom: 1rem;">
+            <span class="logo-mark">ST-SCHON</span>
+            <span class="logo-badge-pill">USA LLC</span>
+          </a>
+          <p style="max-width: 320px; color: var(--text-muted); font-size: 0.9rem; margin-top: 1rem;">
+            ST-SCHON LLC is a registered USA entity and Amazon Seller.
+          </p>
+        </div>
+
+        <div>
+          <div style="font-size: 0.8rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.5rem;">Official Support</div>
+          <a href="mailto:contact@st-schon.com" class="footer-email">contact@st-schon.com</a>
+          <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 0.5rem;">Wilmington, DE 19801, United States</p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 ST-SCHON LLC. All Rights Reserved.</p>
+        <div>
+          <a href="index.html" style="color: var(--text-muted); text-decoration: none; margin-left: 1.5rem;">Home</a>
+          <a href="#booking" style="color: var(--text-muted); text-decoration: none; margin-left: 1.5rem;">Book Appointment</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+  <script src="js/booking.js"></script>
+</body>
+</html>
