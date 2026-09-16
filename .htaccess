@@ -1,0 +1,11 @@
+# ST-SCHON USA LLC - Clean URL & Security Rules for Hostinger Apache Server
+RewriteEngine On
+
+# Redirect /index.html to clean root /
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /index\.html\ HTTP/
+RewriteRule ^index\.html$ https://st-schon.com/ [R=301,L]
+
+# Enable GZIP compression
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript application/json
+</IfModule>

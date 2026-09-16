@@ -3,10 +3,18 @@
    ========================================================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
+  cleanIndexFromUrl();
   setupNavbar();
   setupMobileNav();
   setupPageTransitions();
 });
+
+function cleanIndexFromUrl() {
+  if (window.location.pathname.endsWith('/index.html')) {
+    const cleanUrl = window.location.pathname.replace(/\/index\.html$/, '/') + window.location.search + window.location.hash;
+    window.history.replaceState(null, '', cleanUrl);
+  }
+}
 
 function setupNavbar() {
   const header = document.querySelector('.header');
