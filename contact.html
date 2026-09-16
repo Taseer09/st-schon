@@ -7,6 +7,19 @@
   <meta name="description" content="Contact ST-SCHON LLC at contact@st-schon.com or schedule an appointment with our US team." />
   <meta name="google-site-verification" content="IMkrDVeG0DlP4XZ37JzlQe3WU5z8ph6qBn4d7qnAb90" />
 
+  <!-- Immediate URL Bar Sanitizer -->
+  <script>
+    (function() {
+      try {
+        var p = window.location.pathname;
+        if (p.endsWith('/index.html') || p.endsWith('/index')) {
+          var clean = p.replace(/\/index(\.html)?$/, '/') + window.location.search + window.location.hash;
+          window.history.replaceState(null, '', clean || '/');
+        }
+      } catch(e) {}
+    })();
+  </script>
+
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />

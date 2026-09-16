@@ -67,7 +67,9 @@ function setupPageTransitions() {
         overlay.classList.add('active');
         
         setTimeout(() => {
-          window.location.href = href;
+          let target = href;
+          if (target === 'index.html') target = './';
+          window.location.href = target;
         }, 380);
       });
     }

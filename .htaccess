@@ -1,9 +1,23 @@
-# ST-SCHON USA LLC - Clean URL & Security Rules for Hostinger Apache Server
+# ST-SCHON USA LLC - Full Clean URL & Security Rules for Hostinger Apache Server
 RewriteEngine On
 
-# Redirect /index.html to clean root /
-RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /index\.html\ HTTP/
-RewriteRule ^index\.html$ https://st-schon.com/ [R=301,L]
+# 1. Force HTTPS
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# 2. Redirect /index.html and /index to clean root domain /
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /index(\.html)?\ HTTP/
+RewriteRule ^index(\.html)?$ https://st-schon.com/ [R=301,L]
+
+# 3. Strip .html extension from URL bar (e.g. /contact.html -> /contact)
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /([^/]+)\.html\ HTTP/
+RewriteRule ^([^/]+)\.html$ https://st-schon.com/$1 [R=301,L]
+
+# 4. Internally map extensionless URLs (/contact -> contact.html)
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^([^/]+)$ $1.html [L]
 
 # Enable GZIP compression
 <IfModule mod_deflate.c>
