@@ -533,6 +533,69 @@ h1, h2, h3, h4 {
   }
 }
 
+/* Founder Portrait Card */
+.founder-card {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-hover);
+  border: 1px solid var(--border-subtle);
+  background: #ffffff;
+  transition: var(--transition);
+}
+
+.founder-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 35px 70px -15px rgba(168, 85, 54, 0.2);
+}
+
+.founder-img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  object-position: center 20%;
+  display: block;
+}
+
+.founder-info-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: linear-gradient(to top, rgba(28, 25, 23, 0.95) 0%, rgba(28, 25, 23, 0.7) 65%, transparent 100%);
+  padding: 2.25rem 2rem 1.75rem 2rem;
+  color: #ffffff;
+}
+
+.founder-badge {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #ffffff;
+  background: var(--accent-terracotta);
+  padding: 0.3rem 0.85rem;
+  border-radius: var(--radius-full);
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  margin-bottom: 0.6rem;
+}
+
+.founder-quote {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  font-style: italic;
+  color: #f5f2ed;
+  line-height: 1.45;
+  margin-bottom: 0.6rem;
+}
+
+.founder-name {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.9);
+  letter-spacing: 0.5px;
+}
+
 /* Footer */
 .footer {
   margin-top: auto;
