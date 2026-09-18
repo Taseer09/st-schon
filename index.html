@@ -7,7 +7,7 @@
   <meta name="description" content="ST-SCHON LLC is a registered USA business entity and Amazon Seller crafting premium daily life products." />
   <meta name="google-site-verification" content="IMkrDVeG0DlP4XZ37JzlQe3WU5z8ph6qBn4d7qnAb90" />
 
-  <!-- Immediate URL Bar Sanitizer -->
+  <!-- Immediate Universal Clean URL Sanitizer -->
   <script>
     (function() {
       try {
@@ -15,6 +15,9 @@
         if (p.endsWith('/index.html') || p.endsWith('/index')) {
           var clean = p.replace(/\/index(\.html)?$/, '/') + window.location.search + window.location.hash;
           window.history.replaceState(null, '', clean || '/');
+        } else if (p.endsWith('.html')) {
+          var clean = p.replace(/\.html$/, '') + window.location.search + window.location.hash;
+          window.history.replaceState(null, '', clean);
         }
       } catch(e) {}
     })();

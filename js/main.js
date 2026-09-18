@@ -10,10 +10,16 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function cleanIndexFromUrl() {
-  if (window.location.pathname.endsWith('/index.html')) {
-    const cleanUrl = window.location.pathname.replace(/\/index\.html$/, '/') + window.location.search + window.location.hash;
-    window.history.replaceState(null, '', cleanUrl);
-  }
+  try {
+    const p = window.location.pathname;
+    if (p.endsWith('/index.html') || p.endsWith('/index')) {
+      const cleanUrl = p.replace(/\/index(\.html)?$/, '/') + window.location.search + window.location.hash;
+      window.history.replaceState(null, '', cleanUrl || '/');
+    } else if (p.endsWith('.html')) {
+      const cleanUrl = p.replace(/\.html$/, '') + window.location.search + window.location.hash;
+      window.history.replaceState(null, '', cleanUrl);
+    }
+  } catch(e) {}
 }
 
 function setupNavbar() {
