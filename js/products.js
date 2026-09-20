@@ -24,22 +24,22 @@ const ST_SCHON_PRODUCTS = [
     ]
   },
   {
-    id: 'st-flask-02',
-    title: 'ST-SCHON Vacuum Insulated Thermo Flask 32oz',
+    id: 'st-container-02',
+    title: 'ST-SCHON Minimalist Glass & Terracotta Storage Jar 32oz',
     category: 'home',
     categoryName: 'Home & Living',
-    price: '$34.95',
-    oldPrice: '$44.95',
+    price: '$24.95',
+    oldPrice: '$32.95',
     rating: 4.8,
     reviewsCount: 512,
-    image: 'assets/flask.png',
+    image: 'assets/organizer.png',
     badge: 'AMAZON CHOICE',
     amazonPrime: true,
-    description: 'Keep drinks ice-cold for 24 hours or piping hot for 12 hours. Premium 18/8 food-grade stainless steel with leak-proof brushed gold cap.',
+    description: 'Keep dry goods, coffee, or bath essentials fresh and neatly stored. High borosilicate glass with silicone-sealed terracotta ceramic lid.',
     features: [
-      'Double-wall copper vacuum insulation technology',
-      'BPA-free non-toxic sweat-proof powder coating',
-      'Includes dual lid options (Chug Lid & Straw Lid)',
+      'Airtight silicone seal keeps food and essentials fresh',
+      'Lead-free food-grade high borosilicate glass jar',
+      'Minimalist terracotta aesthetic for modern homes',
       'USA LLC quality inspection guaranteed'
     ]
   },
