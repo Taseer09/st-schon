@@ -549,67 +549,72 @@ h1, h2, h3, h4 {
   }
 }
 
-/* Founder Portrait Card */
-.founder-card {
-  position: relative;
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  box-shadow: var(--shadow-hover);
-  border: 1px solid var(--border-subtle);
+/* Founder Circular Profile Card */
+.founder-box {
   background: #ffffff;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 3rem 2.5rem;
+  text-align: center;
+  box-shadow: var(--shadow-soft);
   transition: var(--transition);
 }
 
-.founder-card:hover {
+.founder-box:hover {
   transform: translateY(-5px);
-  box-shadow: 0 35px 70px -15px rgba(168, 85, 54, 0.2);
+  border-color: var(--border-hover);
+  box-shadow: var(--shadow-hover);
 }
 
-.founder-img {
+.founder-avatar-wrap {
+  width: 220px;
+  height: 220px;
+  margin: 0 auto 1.75rem auto;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid var(--accent-terracotta);
+  box-shadow: 0 12px 30px rgba(168, 85, 54, 0.25);
+  transition: var(--transition);
+}
+
+.founder-avatar-wrap:hover {
+  transform: scale(1.04);
+}
+
+.founder-avatar-img {
   width: 100%;
-  height: 500px;
+  height: 100%;
   object-fit: cover;
-  object-position: center 20%;
   display: block;
 }
 
-.founder-info-overlay {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  background: linear-gradient(to top, rgba(28, 25, 23, 0.95) 0%, rgba(28, 25, 23, 0.7) 65%, transparent 100%);
-  padding: 2.25rem 2rem 1.75rem 2rem;
-  color: #ffffff;
+.founder-name-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.3rem;
 }
 
-.founder-badge {
+.founder-role-badge {
   display: inline-block;
-  font-size: 0.72rem;
+  font-size: 0.75rem;
   font-weight: 700;
-  color: #ffffff;
-  background: var(--accent-terracotta);
-  padding: 0.3rem 0.85rem;
+  color: var(--accent-terracotta);
+  background: var(--bg-card);
+  padding: 0.35rem 1rem;
   border-radius: var(--radius-full);
   text-transform: uppercase;
   letter-spacing: 1.2px;
-  margin-bottom: 0.6rem;
+  margin-bottom: 1.25rem;
+  border: 1px solid var(--border-subtle);
 }
 
-.founder-quote {
+.founder-quote-text {
   font-family: var(--font-serif);
-  font-size: 1.15rem;
+  font-size: 1.1rem;
   font-style: italic;
-  color: #f5f2ed;
-  line-height: 1.45;
-  margin-bottom: 0.6rem;
-}
-
-.founder-name {
-  font-size: 0.92rem;
-  font-weight: 600;
-  color: rgba(255, 255, 255, 0.9);
-  letter-spacing: 0.5px;
+  color: var(--text-secondary);
+  line-height: 1.6;
 }
 
 /* Footer */
