@@ -289,54 +289,558 @@ h1, h2, h3, h4 {
   transform: translateY(-2px);
 }
 
-/* HERO SECTION - FULL-SCREEN BACKGROUND IMAGE WITH LUXURY GRADIENT OVERLAY */
-.hero-editorial {
+/* =====================================================================
+   HERO SECTION - TRENDZONE-INSPIRED BENTO GRID WITH DAILY LIFE PRODUCTS
+   ===================================================================== */
+
+.hero-trend-section {
   position: relative;
   min-height: 100vh;
-  padding-top: var(--header-height);
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
+  padding-top: calc(var(--header-height) + 2rem);
+  padding-bottom: 3rem;
+  background: #ffffff;
   overflow: hidden;
-  background-image: linear-gradient(105deg, rgba(252, 251, 250, 0.95) 0%, rgba(252, 251, 250, 0.85) 45%, rgba(252, 251, 250, 0.4) 100%), url('../assets/hero-bg.jpg');
-  background-size: cover;
-  background-position: center right;
-  background-repeat: no-repeat;
 }
 
-.hero-watermark {
-  position: absolute;
-  top: 52%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-family: var(--font-serif);
-  font-size: clamp(5rem, 15vw, 18rem);
-  font-weight: 400;
-  color: var(--text-watermark);
-  white-space: nowrap;
-  pointer-events: none;
-  z-index: 1;
-  letter-spacing: -2px;
-}
-
-.hero-container-center {
-  position: relative;
-  z-index: 2;
-  width: 100%;
+.hero-trend-inner {
   max-width: var(--container-max);
   margin: 0 auto;
-  padding: 4rem 2rem;
+  padding: 0 1.5rem;
+}
+
+/* ---- Top Row: Circular Badge + Title + Avatar Stack ---- */
+.hero-top-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Circular Rotating Badge */
+.circular-badge {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  flex-shrink: 0;
+}
+
+.circular-badge-text {
+  width: 120px;
+  height: 120px;
+  animation: spinBadge 15s linear infinite;
+}
+
+.circular-badge-text text {
+  font-size: 10.5px;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  fill: var(--text-primary);
+}
+
+.circular-badge-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--text-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 1rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  transition: var(--transition);
+  text-decoration: none;
+}
+
+.circular-badge-icon:hover {
+  background: var(--accent-terracotta);
+  transform: translate(-50%, -50%) scale(1.08);
+}
+
+@keyframes spinBadge {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Hero Giant Title */
+.hero-trend-title-wrap {
+  flex: 1;
+  text-align: center;
+  padding: 0 2rem;
+}
+
+.hero-trend-title {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-size: clamp(2.6rem, 5.5vw, 4.8rem);
+  line-height: 1.04;
+  color: var(--text-primary);
+  letter-spacing: -1.5px;
+  margin: 0;
+}
+
+.hero-trend-title .accent-word {
+  color: var(--accent-terracotta);
+  font-style: italic;
+}
+
+/* Avatar Stack */
+.avatar-stack {
   display: flex;
   flex-direction: column;
+  align-items: flex-end;
+  gap: 0.5rem;
+  flex-shrink: 0;
+  padding-top: 0.5rem;
+}
+
+.avatar-row {
+  display: flex;
+  align-items: center;
+}
+
+.avatar-circle {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 3px solid #ffffff;
+  margin-left: -12px;
+  display: flex;
+  align-items: center;
   justify-content: center;
-  min-height: calc(100vh - var(--header-height));
+  font-size: 1rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  overflow: hidden;
 }
 
-/* Left Hero Copy */
-.hero-left-block {
-  padding-right: 1rem;
+.avatar-circle:first-child {
+  margin-left: 0;
 }
 
+.avatar-circle.avatar-more {
+  background: var(--text-primary);
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+
+/* ---- Bento Products Grid ---- */
+.trend-bento-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 280px 220px;
+  gap: 16px;
+  margin: 2rem 0 2.5rem 0;
+}
+
+.folder-card {
+  border-radius: 28px;
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+}
+
+.folder-card:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+}
+
+.folder-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.folder-card:hover img {
+  transform: scale(1.06);
+}
+
+/* Specific card grid placements */
+.folder-card--1 {
+  grid-column: 1;
+  grid-row: 1 / span 2;
+  background: #E8703A;
+}
+
+.folder-card--2 {
+  grid-column: 2;
+  grid-row: 1;
+  background: #3A7D44;
+}
+
+.folder-card--3 {
+  grid-column: 3;
+  grid-row: 1;
+  background: #F0C93A;
+}
+
+.folder-card--4 {
+  grid-column: 4;
+  grid-row: 1;
+  background: #5DADE2;
+}
+
+.folder-card--5 {
+  grid-column: 5;
+  grid-row: 1 / span 2;
+  background: #7DCEA0;
+}
+
+.folder-card--6 {
+  grid-column: 2;
+  grid-row: 2;
+  background: #D4AC0D;
+}
+
+.folder-card--7 {
+  grid-column: 4 / span 1;
+  grid-row: 2;
+  background: #1D6D50;
+}
+
+/* Center CTA overlay on center card */
+.folder-card--center-cta {
+  grid-column: 3;
+  grid-row: 2;
+  background: var(--text-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 28px;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+}
+
+.folder-card--center-cta:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+}
+
+.bento-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 1rem 2rem;
+  background: #ffffff;
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 0.92rem;
+  border-radius: var(--radius-full);
+  text-decoration: none;
+  transition: var(--transition);
+  box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+  border: none;
+  cursor: pointer;
+}
+
+.bento-cta-btn:hover {
+  background: var(--accent-terracotta);
+  color: #ffffff;
+  transform: scale(1.05);
+}
+
+.bento-cta-btn .arrow-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--text-primary);
+  color: #fff;
+  font-size: 0.7rem;
+  transition: var(--transition);
+}
+
+.bento-cta-btn:hover .arrow-icon {
+  background: #fff;
+  color: var(--accent-terracotta);
+}
+
+/* Small decorative sun icon above center card */
+.bento-sun-icon {
+  position: absolute;
+  top: -18px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent-terracotta);
+  font-size: 0.85rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  z-index: 3;
+}
+
+/* ---- Bottom Row: Quote + Feature Counter ---- */
+.hero-trend-footer {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 3rem;
+  padding: 0 0.5rem;
+}
+
+/* Left Testimonial Quote */
+.hero-quote-block {
+  max-width: 480px;
+}
+
+.hero-quote-mark {
+  font-family: var(--font-serif);
+  font-size: 4.5rem;
+  line-height: 1;
+  color: var(--text-primary);
+  margin-bottom: -1rem;
+}
+
+.hero-quote-text {
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+  margin-bottom: 1rem;
+}
+
+.hero-quote-sig {
+  font-family: var(--font-serif);
+  font-size: 1.8rem;
+  font-style: italic;
+  color: var(--accent-terracotta);
+}
+
+/* Right Numbered Feature Counter */
+.hero-feature-counter {
+  text-align: right;
+  max-width: 400px;
+}
+
+.feature-counter-top {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.feature-number {
+  font-family: var(--font-serif);
+  font-size: 3.8rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1;
+}
+
+.feature-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-transform: capitalize;
+}
+
+.feature-arrow-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1.5px solid var(--border-subtle);
+  color: var(--text-primary);
+  text-decoration: none;
+  font-size: 1rem;
+  transition: var(--transition);
+}
+
+.feature-arrow-link:hover {
+  background: var(--accent-terracotta);
+  border-color: var(--accent-terracotta);
+  color: #fff;
+}
+
+.feature-headline {
+  font-family: var(--font-serif);
+  font-size: 1.6rem;
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--text-primary);
+}
+
+/* ---- Hero Trend Responsive ---- */
+@media (max-width: 1100px) {
+  .trend-bento-grid {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 240px 200px 200px;
+  }
+
+  .folder-card--1 {
+    grid-column: 1;
+    grid-row: 1 / span 2;
+  }
+
+  .folder-card--2 {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .folder-card--3 {
+    grid-column: 3;
+    grid-row: 1;
+  }
+
+  .folder-card--4 {
+    grid-column: 2;
+    grid-row: 2;
+  }
+
+  .folder-card--5 {
+    grid-column: 3;
+    grid-row: 2;
+  }
+
+  .folder-card--6 {
+    grid-column: 1;
+    grid-row: 3;
+  }
+
+  .folder-card--center-cta {
+    grid-column: 2;
+    grid-row: 3;
+  }
+
+  .folder-card--7 {
+    grid-column: 3;
+    grid-row: 3;
+  }
+}
+
+@media (max-width: 820px) {
+  .hero-top-row {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .circular-badge {
+    width: 90px;
+    height: 90px;
+  }
+
+  .circular-badge-text {
+    width: 90px;
+    height: 90px;
+  }
+
+  .circular-badge-icon {
+    width: 34px;
+    height: 34px;
+    font-size: 0.8rem;
+  }
+
+  .hero-trend-title-wrap {
+    padding: 0;
+  }
+
+  .hero-trend-title {
+    font-size: clamp(2rem, 7vw, 3rem);
+  }
+
+  .avatar-stack {
+    align-items: center;
+  }
+
+  .trend-bento-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(4, 200px);
+  }
+
+  .folder-card--1 {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .folder-card--2 {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .folder-card--3 {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  .folder-card--4 {
+    grid-column: 2;
+    grid-row: 2;
+  }
+
+  .folder-card--5 {
+    grid-column: 1;
+    grid-row: 3;
+  }
+
+  .folder-card--center-cta {
+    grid-column: 2;
+    grid-row: 3;
+  }
+
+  .folder-card--6 {
+    grid-column: 1;
+    grid-row: 4;
+  }
+
+  .folder-card--7 {
+    grid-column: 2;
+    grid-row: 4;
+  }
+
+  .hero-trend-footer {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero-feature-counter {
+    text-align: center;
+  }
+
+  .feature-counter-top {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .trend-bento-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(8, 200px);
+  }
+
+  .folder-card--1,
+  .folder-card--2,
+  .folder-card--3,
+  .folder-card--4,
+  .folder-card--5,
+  .folder-card--6,
+  .folder-card--7,
+  .folder-card--center-cta {
+    grid-column: 1;
+    grid-row: auto;
+  }
+}
+
+/* Shared Subhead Label (used on About + Contact pages) */
 .hero-subhead {
   font-size: 0.85rem;
   font-weight: 700;
@@ -344,101 +848,6 @@ h1, h2, h3, h4 {
   color: var(--accent-terracotta);
   text-transform: uppercase;
   margin-bottom: 1rem;
-}
-
-.hero-main-title {
-  font-size: clamp(2.2rem, 4vw, 3.4rem);
-  line-height: 1.08;
-  margin-bottom: 1.25rem;
-  word-break: break-word;
-  overflow-wrap: break-word;
-}
-
-.hero-body-text {
-  font-size: 1rem;
-  color: var(--text-secondary);
-  margin-bottom: 2rem;
-  line-height: 1.7;
-}
-
-.hero-link-arrow {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.75rem;
-  color: var(--accent-terracotta);
-  font-weight: 700;
-  font-size: 0.95rem;
-  text-decoration: none;
-  transition: var(--transition);
-}
-
-.hero-link-arrow:hover {
-  gap: 1.2rem;
-  color: var(--accent-terracotta-dark);
-}
-
-/* Center Hero Visual Box */
-.hero-center-visual {
-  position: relative;
-  width: 100%;
-  height: 480px;
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  box-shadow: var(--shadow-hover);
-  border: 1px solid var(--border-subtle);
-  background: var(--bg-card);
-  transition: var(--transition);
-}
-
-.hero-center-visual:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 35px 70px -15px rgba(168, 85, 54, 0.2);
-}
-
-.hero-visual-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  display: block;
-  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.hero-center-visual:hover .hero-visual-img {
-  transform: scale(1.03);
-}
-
-/* Right Inset Card */
-.hero-right-card {
-  background: #ffffff;
-  border: 1px solid var(--border-subtle);
-  border-radius: var(--radius-lg);
-  padding: 2rem;
-  box-shadow: var(--shadow-soft);
-  transition: var(--transition);
-}
-
-.hero-right-card:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--shadow-hover);
-}
-
-.card-tag {
-  font-size: 0.75rem;
-  color: var(--accent-terracotta);
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-.card-title {
-  font-size: 1.4rem;
-  margin: 0.5rem 0;
-}
-
-.card-desc {
-  font-size: 0.88rem;
-  color: var(--text-secondary);
 }
 
 /* Brand Manifesto Grid */

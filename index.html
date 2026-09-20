@@ -38,8 +38,6 @@
   <!-- Stylesheets -->
   <link rel="stylesheet" href="css/style.css" />
 
-  <!-- Three.js CDN -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 </head>
 <body>
 
@@ -71,33 +69,121 @@
     </div>
   </header>
 
-  <!-- HERO SECTION - FULL-SCREEN BACKGROUND IMAGE WITH DAILY LIFE PRODUCTS -->
-  <section class="hero-editorial">
-    <!-- Giant Soft Watermark Text floating in background -->
-    <div class="hero-watermark">ST-SCHON</div>
+  <!-- HERO SECTION - TRENDZONE-INSPIRED BENTO GRID -->
+  <section class="hero-trend-section">
+    <div class="hero-trend-inner">
 
-    <div class="hero-container-center">
-      <!-- Main Hero Content Overlay -->
-      <div class="hero-left-block">
-        <div class="hero-subhead">THE FUTURE LIFESTYLE</div>
-        <h1 class="hero-main-title">
-          Essential living, <span class="serif-text text-terracotta">elevated daily.</span>
-        </h1>
-        <p class="hero-body-text">
-          ST-SCHON LLC is a registered USA business entity and verified Amazon Seller offering thoughtfully curated daily life products designed for convenience, modern utility, and timeless aesthetics.
-        </p>
-        <div style="display: flex; gap: 1.25rem; align-items: center; flex-wrap: wrap;">
-          <a href="contact.html#booking" class="btn btn-primary">
-            <i class="fa-solid fa-calendar-check"></i> Book an Appointment
-          </a>
-          <a href="about.html" class="btn btn-outline">
-            <i class="fa-solid fa-compass"></i> Discover Our Story
-          </a>
-          <a href="contact.html" class="hero-link-arrow" style="margin-left: 0.5rem;">
-            CONTACT US <i class="fa-solid fa-arrow-right-long"></i>
+      <!-- TOP ROW: Circular Badge + Giant Title + Avatar Stack -->
+      <div class="hero-top-row">
+
+        <!-- Left: Rotating Circular Badge -->
+        <div class="circular-badge">
+          <svg class="circular-badge-text" viewBox="0 0 120 120">
+            <defs>
+              <path id="circlePath" d="M 60,60 m -45,0 a 45,45 0 1,1 90,0 a 45,45 0 1,1 -90,0" />
+            </defs>
+            <text>
+              <textPath href="#circlePath">LEARN ABOUT US • ST-SCHON USA •</textPath>
+            </text>
+          </svg>
+          <a href="about.html" class="circular-badge-icon" aria-label="Learn about ST-SCHON">
+            <i class="fa-solid fa-play"></i>
           </a>
         </div>
+
+        <!-- Center: Giant Hero Title -->
+        <div class="hero-trend-title-wrap">
+          <h1 class="hero-trend-title">
+            Elevate Your Living With<br />
+            <span class="accent-word">Essential</span> Daily Products
+          </h1>
+        </div>
+
+        <!-- Right: Avatar Stack -->
+        <div class="avatar-stack">
+          <div class="avatar-row">
+            <div class="avatar-circle" style="background: #f0c93a;">🛒</div>
+            <div class="avatar-circle" style="background: #7dcea0;">📦</div>
+            <div class="avatar-circle" style="background: #e8703a;">⭐</div>
+            <div class="avatar-circle avatar-more">+</div>
+          </div>
+        </div>
       </div>
+
+      <!-- BENTO GRID: Daily Life Products Gallery -->
+      <div class="trend-bento-grid">
+
+        <!-- Card 1 — tall left (orange mug) -->
+        <div class="folder-card folder-card--1">
+          <img src="assets/card-prod-1.jpg" alt="Premium Smart Mug – ST-SCHON Daily Essential" loading="lazy" />
+        </div>
+
+        <!-- Card 2 — green sprayer -->
+        <div class="folder-card folder-card--2">
+          <img src="assets/card-prod-3.jpg" alt="Sage Green Sprayer Bottle – ST-SCHON Home Essential" loading="lazy" />
+        </div>
+
+        <!-- Card 3 — yellow carafe (with sun icon above) -->
+        <div class="folder-card folder-card--3" style="position: relative;">
+          <span class="bento-sun-icon"><i class="fa-solid fa-sun"></i></span>
+          <img src="assets/card-prod-4.jpg" alt="Glass Carafe Set – ST-SCHON Kitchen Essential" loading="lazy" />
+        </div>
+
+        <!-- Card 4 — sky blue lamp -->
+        <div class="folder-card folder-card--4">
+          <img src="assets/card-prod-5.jpg" alt="Sky Blue Desk Lamp – ST-SCHON Office Essential" loading="lazy" />
+        </div>
+
+        <!-- Card 5 — tall right (mint green smartband) -->
+        <div class="folder-card folder-card--5">
+          <img src="assets/card-prod-6.jpg" alt="Fitness Smart Tracker – ST-SCHON Wearable" loading="lazy" />
+        </div>
+
+        <!-- Card 6 — gold organizer -->
+        <div class="folder-card folder-card--6">
+          <img src="assets/card-prod-2.jpg" alt="Ceramic Organizer Tray – ST-SCHON Desk Essential" loading="lazy" />
+        </div>
+
+        <!-- Center CTA Card -->
+        <div class="folder-card--center-cta">
+          <a href="contact.html#booking" class="bento-cta-btn">
+            Book Appointment <span class="arrow-icon"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+          </a>
+        </div>
+
+        <!-- Card 7 — emerald desk pad -->
+        <div class="folder-card folder-card--7">
+          <img src="assets/card-prod-7.jpg" alt="Emerald Desk Pad – ST-SCHON Office Essential" loading="lazy" />
+        </div>
+
+      </div>
+
+      <!-- BOTTOM ROW: Testimonial Quote + Numbered Feature -->
+      <div class="hero-trend-footer">
+
+        <!-- Left: Testimonial Quote -->
+        <div class="hero-quote-block">
+          <div class="hero-quote-mark">"</div>
+          <p class="hero-quote-text">
+            ST-SCHON's daily products are curated, practical, and exactly what I needed to upgrade my home. Loved the quality and modern aesthetic!
+          </p>
+          <div class="hero-quote-sig">Tanvir M.</div>
+        </div>
+
+        <!-- Right: Numbered Feature -->
+        <div class="hero-feature-counter">
+          <div class="feature-counter-top">
+            <span class="feature-number">01</span>
+            <span class="feature-label">Lifestyle</span>
+            <a href="about.html" class="feature-arrow-link" aria-label="Discover more">
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+          <h3 class="feature-headline">Set Up Your Living Space<br />With The Latest Essentials</h3>
+        </div>
+
+      </div>
+
     </div>
   </section>
 
